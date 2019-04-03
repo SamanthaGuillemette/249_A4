@@ -114,29 +114,29 @@ public class CellPhone implements Cloneable{
 	
 	//Mutators
 	
-	/** Set route number passed to the constructor.  
+	/** Set serial number passed to the constructor.  
 	 * @param SN serialNum to set.
 	 */
 	public void setSerialNum(long SN) {
 		serialNum = SN;
 	}
 	
-	/** Set route number passed to the constructor.  
+	/** Set brand passed to the constructor.  
 	 * @param B brand to set.
 	 */
 	public void setBrand(String B) {
 		brand = B;
 	}
 	
-	/** Set route number passed to the constructor.  
+	/** Set year passed to the constructor.  
 	 * @param Y year to set.
 	 */
 	public void setYear(int Y) {
 		year = Y;
 	}
 	
-	/** Set route number passed to the constructor.  
-	 * @param B brand to set.
+	/** Set price passed to the constructor.  
+	 * @param P price to set.
 	 */
 	public void setPrice(double P) {
 		price = P;
@@ -144,6 +144,10 @@ public class CellPhone implements Cloneable{
 	
 	//Clone method RECHECK!!!
 	//clone() method. This method will prompt the user to enter a new serial number, then creates and returns a clone of the calling object with the exception of the serial number, which is assigned the value entered by the user
+	/** Creates and returns copy of the object CellPhone
+	 * @return deep clone of copy of CellPhone object
+	 */
+	@Override
 	public CellPhone clone() throws CloneNotSupportedException{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please enter a new serial number:");
@@ -153,7 +157,7 @@ public class CellPhone implements Cloneable{
 		sc.close();
 		
 		CellPhone CP = (CellPhone)super.clone();
-	    CP.serialNum = SN; //maybe (String)this.name.clone(); could be used
+	    CP.serialNum = SN; 
 	    return CP;	
 	}
 	

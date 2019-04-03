@@ -1,7 +1,8 @@
+import java.util.Scanner;
 
 public class CellList {
 
-	public class CellNode{
+	public class CellNode implements Cloneable{
 		
 		
 		//Attributes
@@ -51,6 +52,49 @@ public class CellList {
 		}
 		
 		//Methods
+		
+		//Accessors
+		
+		/** @return CP passed to the constructor.  */
+		public CellPhone getCP() {
+			return CP;
+		}
+		
+		/** @return pointer passed to the constructor.  */
+		public CellNode getPointer() {
+			return pointer;
+		}
+		
+		//Mutators
+		
+		/** Set CP passed to the constructor.  
+		 * @param CP CellPhone to set.
+		 */
+		public void setCP(CellPhone cp) {
+			CP = cp;
+		}
+		
+		/** Set CP passed to the constructor.  
+		 * @param CP CellPhone to set.
+		 */
+		public void setPointer(CellNode P) {
+			pointer = P;
+		}
+		
+		//clone method
+		//Recheck later
+		/** Creates and returns copy of the object CellNode
+		 * @return deep clone of copy of CellNode object
+		 */
+		@Override
+		public CellNode clone() throws CloneNotSupportedException{
+			
+			CellNode clonedCN = (CellNode)super.clone();
+			clonedCN.setCP((CellPhone)clonedCN.getCP().clone());
+			clonedCN.setPointer((CellNode)clonedCN.getPointer().clone());
+			
+		    return clonedCN;	
+		}
 		
 		
 	}
